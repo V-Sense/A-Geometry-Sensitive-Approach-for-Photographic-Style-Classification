@@ -1,0 +1,8 @@
+flask
+torch
+torchvision
+opencv-python
+scikit-learn
+scipy
+termcolor
+

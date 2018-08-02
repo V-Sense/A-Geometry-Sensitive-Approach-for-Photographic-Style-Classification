@@ -1,0 +1,69 @@
+<html>
+   <head>
+      <style>
+         .center{
+         margin: auto;
+         width: 90%;
+         height: 100%;
+         padding: 10px;
+             background-color: #D0D0D0;
+         }
+      </style>
+      <style>
+         .left{
+         width: 58%;
+         height: 90%;
+         border: 3px ;
+         float: left;
+         padding: 10px;
+             
+         }
+      </style>
+      <style>
+         .right {
+         width: 37%;
+         border: 3px ;  
+         float: right;
+         height: 90%;
+        padding: 10px;
+         }
+      </style>
+      <title>Intelligent Photo Assesment</title>
+   </head>
+   <body>
+       <div class="center" style="height:20%; text-align:center;">
+       <img src="static/VS-LOGO-FINAL_HiRes.jpg" alt="" style="max-height:30%; max-width:30%;">
+           <h1 align = "center">Automatic Photographic Style Prediction</h1>
+       </div>
+       
+      <div class="center">
+         <div class="left" style="text-align: center">
+            <form action="/runTest" method="post" style="position:relative;padding: 10px;">
+                <input id="linkforurl" name="link" type="url" />
+               <input type="submit" value="Submit">
+            </form>
+              {% if testImageName %}
+             <img src={{testImageName}} style="max-height:85%; max-width:85%;">
+             {% else %}
+             <img src="" alt="" style="max-height:80%; max-width:80%;">
+             {% endif %}
+              
+         </div>
+         <div class="right">
+             <table border="1" width="500">
+                 <th><font size = "6" color = "red">Style</font></th><th><font size = "6" color = "red">Probability</font></th>
+                 {%if styleLabels%}
+                    {%for label,prob in styleLabels%}
+                    <tr><td align = "center"> <font size = "5" style="font-weight:bold">{{label}}</font></td><td align = "center"><font size = "5" style="font-weight:bold">{{prob}}</font></td></tr>
+                  {% endfor %}
+                 {%endif%}
+             </table>
+          </div>
+      </div>
+      <!--<div class="center" style="height:25%;">
+         <div class="center" style="height:60%; border: 3px solid;">
+            Caption
+         </div>
+      </div>-->
+   </body>
+</html>

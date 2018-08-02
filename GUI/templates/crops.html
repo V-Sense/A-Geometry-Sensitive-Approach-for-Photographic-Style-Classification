@@ -1,0 +1,86 @@
+<html>
+   <head>
+      <style>
+         .center{
+         margin: auto;
+         width: 90%;
+         height: 75%;
+         padding: 10px;
+         }
+      </style>
+      <style>
+         .left{
+         width: 60%;
+         height: 90%;
+         border: 3px solid ;
+         float: left;
+         padding: 10px;
+             
+         }
+      </style>
+      <style>
+         .right {
+         width: 25%;
+         border: 3px solid ;  
+         float: right;
+         height: 90%;
+             padding: 10px;
+         }
+      </style>
+      <title>Intelligent Photo Assesment</title>
+   </head>
+   <body>
+      <div class="center">
+         <div class="left" style="text-align: center">
+            <form action="/runTest" method="post" style="position:relative;padding: 10px;">
+                <input id="linkforurl" name="link" type="url" />
+               <input type="submit" value="Submit">
+            </form>
+              {% if testImageName %}
+             <img src={{testImageName}} style="max-height:80%; max-width:80%;">
+             {% else %}
+             <img src="" alt="Give an URL for a JPEG image" style="max-height:80%; max-width:80%;">
+             {% endif %}
+              
+         </div>
+         <div class="right">
+             <table >
+                 <th>Style</th><th>Probability</th>
+                 {%if styleLabels%}
+                    {%for label,prob in styleLabels[-1]%}
+                    <tr><td>{{label}}</td><td>{{prob}}</td></tr>
+                  {% endfor %}
+                 {%endif%}
+             </table>
+          </div>
+      </div>
+       
+       {% if styleLabels %}
+                {%for c,label in enumerate(styleLabels[0:-1])%}
+                       <div class="center" style="width: 45%; height: 35%; float: left; border: 3px solid">
+                           
+                         <div class="left" style="text-align: center">
+                             {{"Crop : "+ str(c)}}
+                             <img src={{"static/Cropped_Input/TestCrop_"+str(c)+"_.jpg"}} style="max-height:80%; max-width:80%; border: 0px">
+                             
+                        </div>
+                           
+                         <div class="right border: 0px">
+                             <table style = "font-size:10">
+                                 <th>Style</th><th>Probability</th>
+                                    {%for label,prob in label%}
+                                    <tr><td>{{label}}</td><td>{{prob}}</td></tr>
+                                    {% endfor %}
+                             </table>
+                          </div>
+                           
+                      </div>
+                {%endfor%}
+       {%endif%}
+      <!--<div class="center" style="height:25%;">
+         <div class="center" style="height:60%; border: 3px solid;">
+            Caption
+         </div>
+      </div>-->
+   </body>
+</html>
