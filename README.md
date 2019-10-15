@@ -15,9 +15,10 @@ python 2.7
 
 ## Data and Pretrained models
 For faster training, we have extracted the saliency maps using [1] and appended them with the RGB images as RGBA PILs. 
-* [RGB](https://tcdud-my.sharepoint.com/:f:/g/personal/ghosalk_tcd_ie/Ekq_RY6oxbFIsL-n_b8ur3QBi2yKAbds-NVQTIK6thFQjA?e=qK5eNR)  
-* [RGB + Saliency](https://tcdud-my.sharepoint.com/:f:/g/personal/ghosalk_tcd_ie/EjzRYdJAospDmnq7Ip86i7QBz5LLrUTEK_NEmjpELGdiHw?e=J3dk2R)
-* [Pretrained Models](https://tcdud-my.sharepoint.com/:f:/g/personal/ghosalk_tcd_ie/EqETd_vlFnpCqSWBYyysAJcB9Pvony935GtxokXMDDKndA?e=RYdGAn)
+* RGB  
+* RGB + Saliency
+* Pretrained Models
+[Download Link](https://drive.google.com/file/d/1TtiZvHhfBtFbT7PuwHEqRP1UFGhCdi_d/view?usp=sharing)
 
 ## Running the scripts
 ### Features 
