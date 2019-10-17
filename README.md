@@ -19,7 +19,7 @@ For faster training, we have extracted the saliency maps using [1] and appended 
 * RGB + Saliency
 * Pretrained Models
 
-[Download Link](https://drive.google.com/file/d/1TtiZvHhfBtFbT7PuwHEqRP1UFGhCdi_d/view?usp=sharing)
+[Download Link](https://drive.google.com/drive/folders/1_uMhg8cllErcHQX1ZQcE0A8gBWcnmCD-?usp=sharing)
 
 ## Running the scripts
 ### Features 
